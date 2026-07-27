@@ -759,7 +759,27 @@
 
 <body>
 
-    <!-- Mobile Menu Toggle -->
+    <!-- Login Modal Overlay -->
+    <div id="loginModal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 99999; align-items: center; justify-content: center; padding: 20px;">
+        <div style="background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(255, 255, 255, 0.12); padding: 40px 32px; border-radius: 24px; max-width: 380px; width: 100%; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); text-align: center; font-family: 'Inter', sans-serif;">
+            <div style="font-size: 2.8rem; margin-bottom: 10px;">🔐</div>
+            <h2 style="font-size: 1.5rem; color: #F1F5F9; margin: 0 0 6px 0; font-weight: 700;">KAIDO Admin</h2>
+            <p style="color: #94A3B8; font-size: 0.88rem; margin: 0 0 24px 0;">Enter your credentials to access the control panel</p>
+            
+            <form id="adminLoginForm" onsubmit="handleLoginSubmit(event)">
+                <div style="margin-bottom: 16px; text-align: left;">
+                    <label style="display: block; font-size: 0.75rem; color: #818CF8; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Username</label>
+                    <input type="text" id="loginUsername" placeholder="Username" required style="width: 100%; background: #0F172A; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; padding: 12px 14px; color: #F1F5F9; font-size: 0.95rem; outline: none; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 20px; text-align: left;">
+                    <label style="display: block; font-size: 0.75rem; color: #818CF8; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Password" required style="width: 100%; background: #0F172A; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; padding: 12px 14px; color: #F1F5F9; font-size: 0.95rem; outline: none; box-sizing: border-box;">
+                </div>
+                <div id="loginErrorMsg" style="color: #EF4444; font-size: 0.85rem; margin-bottom: 16px; display: none; font-weight: 500;"></div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; border-radius: 12px; font-weight: 600; font-size: 0.95rem; cursor: pointer;">Sign In</button>
+            </form>
+        </div>
+    </div>
     <div class="menu-toggle" id="menuToggle">
         <span></span>
         <span></span>
@@ -1008,16 +1028,35 @@
         });
 
         function showLoginForm() {
-            setTimeout(() => {
-                const username = prompt('Enter Username:');
-                if (!username) { alert('Login Required'); return; }
-                const password = prompt('Enter Password:');
-                if (!password) { alert('Login Required'); return; }
+            document.getElementById('loginModal').style.display = 'flex';
+        }
 
-                AUTH_TOKEN = btoa(`${username}:${password}`);
-                localStorage.setItem('admin_token', AUTH_TOKEN);
-                location.reload();
-            }, 100);
+        async function handleLoginSubmit(e) {
+            e.preventDefault();
+            const user = document.getElementById('loginUsername').value.trim();
+            const pass = document.getElementById('loginPassword').value.trim();
+            const errorEl = document.getElementById('loginErrorMsg');
+            errorEl.style.display = 'none';
+
+            const testToken = btoa(`${user}:${pass}`);
+
+            try {
+                const res = await fetch(`${API_BASE}/stats`, {
+                    headers: { 'Authorization': `Basic ${testToken}` }
+                });
+                if (res.ok) {
+                    AUTH_TOKEN = testToken;
+                    localStorage.setItem('admin_token', AUTH_TOKEN);
+                    document.getElementById('loginModal').style.display = 'none';
+                    loadStats();
+                } else {
+                    errorEl.innerText = 'Invalid username or password.';
+                    errorEl.style.display = 'block';
+                }
+            } catch (err) {
+                errorEl.innerText = 'Unable to connect to server. Please try again.';
+                errorEl.style.display = 'block';
+            }
         }
 
         function logout() {

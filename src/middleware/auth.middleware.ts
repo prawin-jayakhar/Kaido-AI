@@ -22,9 +22,9 @@ export const requireAdminAuth = (req: Request, res: Response, next: NextFunction
     const decoded = Buffer.from(credentials, 'base64').toString('utf-8');
     const [username, password] = decoded.split(':');
 
-    // Credentials check against environment variables or fallback
-    const expectedUsername = process.env.ADMIN_USERNAME || 'admin';
-    const expectedPassword = process.env.ADMIN_SECRET || 'admin';
+    // Credentials check against environment variables or fallback to user requested defaults
+    const expectedUsername = process.env.ADMIN_USERNAME || 'prawinjayakhar';
+    const expectedPassword = process.env.ADMIN_SECRET || 'Prawi@0509';
 
     if (username === expectedUsername && password === expectedPassword) {
         next(); // Authentication successful
