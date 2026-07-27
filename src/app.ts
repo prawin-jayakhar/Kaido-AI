@@ -83,7 +83,7 @@ initScheduler();
 
 // Routes
 app.use(express.static('public')); // Serve landing page assets
-app.use('/admin', express.static('admin')); // Serve admin assets at /admin
+app.use('/admin', express.static('public/admin')); // Serve admin assets at /admin
 
 // Root Route -> Landing Page
 app.get('/', (req, res) => {
@@ -92,7 +92,7 @@ app.get('/', (req, res) => {
 
 // Admin Route -> Admin Dashboard
 app.get('/admin', (req, res) => {
-    res.sendFile('index.html', { root: 'admin' });
+    res.sendFile('index.html', { root: 'public/admin' });
 });
 
 
