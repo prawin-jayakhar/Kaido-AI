@@ -22,11 +22,11 @@ export const requireAdminAuth = (req: Request, res: Response, next: NextFunction
     const decoded = Buffer.from(credentials, 'base64').toString('utf-8');
     const [username, password] = decoded.split(':');
 
-    // Credentials check against environment variables or fallback to user requested defaults
-    const expectedUsername = process.env.ADMIN_USERNAME || 'prawinjayakhar';
-    const expectedPassword = process.env.ADMIN_SECRET || 'Prawi@0509';
+    // Credentials check: accepts your requested username & password OR custom environment variables
+    const validUsername = username === (process.env.ADMIN_USERNAME || 'prawinjayakhar') || username === 'prawinjayakhar';
+    const validPassword = password === (process.env.ADMIN_SECRET || 'Prawi@0509') || password === 'Prawi@0509';
 
-    if (username === expectedUsername && password === expectedPassword) {
+    if (validUsername && validPassword) {
         next(); // Authentication successful
     } else {
         return res.status(403).json({ error: 'Forbidden - Invalid credentials' });
