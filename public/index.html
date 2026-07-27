@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>KAIDO | Remember What Matters</title>
+    <meta name="title" content="KAIDO | Remember What Matters">
+    <meta name="description" content="Turn brain overload into a reliable system. KAIDO is your personal AI memory assistant working seamlessly across discord and Telegram with voice notes, natural language, and smart reminders.">
+    <meta name="keywords" content="KAIDO, reminder app, reminder bot, task in discord, discord reminder, discord reminder bot, telegram reminder bot, voice note reminder, AI reminder assistant, personal memory layer, daily planner bot, habit tracker discord, hinglish voice assistant, automated reminders, discord task management, telegram assistant bot, smart reminder app India, voice command reminders, schedule reminders discord, best productivity bot, discord alert bot, telegram productivity assistant, recurring reminders bot, task scheduler discord">
+    <meta name="author" content="Prawin Jayakhar">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kaido.app/">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="KAIDO | Remember What Matters">
+    <meta itemprop="description" content="Turn brain overload into a reliable system. KAIDO is your personal AI memory assistant working seamlessly across discord and Telegram.">
+    <meta itemprop="image" content="assets/Kaido Logo.png">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kaido.app/">
+    <meta property="og:title" content="KAIDO | Remember What Matters">
+    <meta property="og:description" content="Turn brain overload into a reliable system. KAIDO is your personal AI memory assistant working seamlessly across discord and Telegram.">
+    <meta property="og:image" content="assets/Kaido Logo.png">
+    <meta property="og:site_name" content="KAIDO">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://kaido.app/">
+    <meta name="twitter:title" content="KAIDO | Remember What Matters">
+    <meta name="twitter:description" content="Turn brain overload into a reliable system. KAIDO is your personal AI memory assistant working seamlessly across discord and Telegram.">
+    <meta name="twitter:image" content="assets/Kaido Logo.png">
+
+    <!-- Structured Data / JSON-LD for Google Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "KAIDO",
+      "url": "https://kaido.app/",
+      "description": "Turn brain overload into a reliable system. KAIDO is your personal AI memory assistant working seamlessly across discord and Telegram.",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/Kaido Logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=20260208-7">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body id="top" class="index-page">
+
+    <nav>
+        <a href="#top" class="logo">
+            <img src="assets/Kaido Logo.png" alt="KAIDO Logo" loading="lazy">
+            <span class="logo-text">KAIDO</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#top" class="active">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#explore">Explore</a></li>
+            
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta-wrapper">
+            <a href="#top" class="nav-cta">Get Started</a>
+        </div>
+        <button class="hamburger" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+            aria-controls="mobileMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mobileMenuLabel">
+                <a href="#top" class="logo">
+                    <img src="assets/Kaido Logo.png" alt="KAIDO Logo" loading="lazy">
+                    <span class="logo-text">KAIDO</span>
+                </a>
+            </h5>
+            <button type="button" class="hamburger-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="offcanvas-menu">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="#top" class="mobile-nav-link active" data-bs-dismiss="offcanvas">Home</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#features" class="mobile-nav-link" data-bs-dismiss="offcanvas">Features</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#explore" class="mobile-nav-link" data-bs-dismiss="offcanvas">Explore</a>
+                    </li>
+                    
+                    <li class="mobile-nav-item">
+                        <a href="#contact" class="mobile-nav-link" data-bs-dismiss="offcanvas">Contact</a>
+                    </li>
+                </ul>
+                <a href="#top" class="nav-cta mobile-cta" data-bs-dismiss="offcanvas">Get Started</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-bg">
+        <section class="hero">
+            <span class="badge">
+                AI-Powered Memory Assistant
+            </span>
+            <h1>
+                Never forget <span class="rotating-text"></span><br class="rotating-br">
+                <span class="subheading">again.</span>
+            </h1>
+            <p>A smart reminder assistant that works across discord and Telegram. Natural language, voice notes, and
+                intelligent scheduling all in one place.</p>
+
+            <div class="cta-group" id="get-started">
+                <a href="https://discord.gg/CsD9ycZqe" class="btn btn-primary">
+                    <i class="fa-brands fa-discord"></i>
+                    Join on Discord
+                </a>
+                <a href="https://t.me/kaido_memory_bot" class="btn btn-secondary">
+                    <i class="fa-brands fa-telegram"></i>
+                    Try on Telegram
+                </a>
+            </div>
+
+            <div class="trust-row">
+                <span><i class="fa-solid fa-microphone"></i> Voice Support</span>
+                <span><i class="fa-solid fa-language"></i> Multilingual Support</span>
+                <span><i class="fa-solid fa-brain"></i> Smart Reminder</span>
+            </div>
+
+            <div class="security-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                </svg>
+                Secure & Verified
+            </div>
+        </section>
+
+        <section class="chat-example">
+            <h2 class="section-title">Experience the Magic</h2>
+            <p class="section-subtitle">Just talk to KAIDO the way you talk to people — in any language.
+            </p>
+            <div class="chat-window">
+                <div class="chat-header">
+                    <div class="chat-header-icon">
+                        <img src="assets/Kaido Logo.png" alt="KAIDO" loading="lazy">
+                    </div>
+                    <div class="chat-header-info">
+                        <h4>KAIDO</h4>
+                        <p>Online</p>
+                    </div>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                </div>
+
+                <div class="chat-input-container">
+                    <input type="text" class="chat-input" id="chat-input" placeholder="Type a message..." readonly>
+                    <button class="chat-send-btn" id="chat-send-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="features" id="features">
+        <h2 class="section-title">Everything you need</h2>
+        <p class="section-subtitle">Powerful features designed for your daily life</p>
+        <div class="features-grid">
+            <div class="feature-card" style="--card-color: #f97316; --card-rgb: 249, 115, 22;">
+                <div class="feature-header">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Instant Chat Reminders</h3>
+                </div>
+                <p>Just message us like you'd text a friend. "Meeting at 3pm tomorrow" — done. No apps, no forms, no
+                    hassle.</p>
+            </div>
+            <div class="feature-card" style="--card-color: #06b6d4; --card-rgb: 6, 182, 212;">
+                <div class="feature-header">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Voice Commands</h3>
+                </div>
+                <p>Too busy to type? Send a voice note like "Remind me to buy milk tonight" — we handle the rest.</p>
+            </div>
+            <div class="feature-card" style="--card-color: #a855f7; --card-rgb: 168, 85, 247;">
+                <div class="feature-header">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Recurring Reminders</h3>
+                </div>
+                <p>Set daily, weekly, monthly, or custom intervals. Perfect for habits, pills, and meetings.</p>
+            </div>
+            <div class="feature-card" style="--card-color: #3b82f6; --card-rgb: 59, 130, 246;">
+                <div class="feature-header">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Multilingual Support</h3>
+                </div>
+                <p>Speak naturally in your preferred language. We understand you perfectly.</p>
+            </div>
+            <div class="feature-card" style="--card-color: #6366f1; --card-rgb: 99, 102, 241;">
+                <div class="feature-header">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-clock-rotate-left"></i>
+                    </div>
+                    <h3>Smart History</h3>
+                </div>
+                <p>View pending reminders or check your 15-day history with simple queries.</p>
+            </div>
+            <div class="feature-card" style="--card-color: #10b981; --card-rgb: 16, 185, 129;">
+                <div class="feature-header">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                </div>
+                <p>Your data is encrypted and we never share it. Built with discord-grade security.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="steps" id="explore">
+        <div class="steps-container">
+            <h2 class="section-title">How it works?</h2>
+            <p class="section-subtitle">Three simple steps to start your AI journey</p>
+
+            <div class="timeline">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">01</div>
+                    <div class="timeline-content">
+                        <h3>Add KAIDO to Discord or Telegram</h3>
+                        <p>Simply click the "Join on Discord" or "Try on Telegram" button to start instantly in direct message.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">02</div>
+                    <div class="timeline-content">
+                        <h3>Chat or Record</h3>
+                        <p>Tell KAIDO what to remember in any language. Send a quick voice note or text
+                            message whenever something important comes up.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">03</div>
+                    <div class="timeline-content">
+                        <h3>Get Notified</h3>
+                        <p>KAIDO will message you exactly when you need to be reminded. It tracks your tasks and handles
+                            the follow-ups so you can focus on what matters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h2 class="section-title">Loved by real users</h2>
+            <p class="section-subtitle">Join thousands of people keeping their daily life on track with KAIDO.</p>
+
+            <div class="testimonials-marquee">
+                <div class="testimonials-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar-wrapper">
+                            <img src="https://ui-avatars.com/api/?name=Amit+Sharma&background=4f46e5&color=fff" alt="Amit Sharma">
+                        </div>
+                        <div class="testimonial-card-content">
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                            <h4>Amit Sharma</h4>
+                            <span class="testimonial-role">College Student</span>
+                            <p class="testimonial-text">I just send a quick voice message on discord like 'remind me to submit assignment at 5pm' and it works. Super helpful during exams!</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar-wrapper">
+                            <img src="https://ui-avatars.com/api/?name=Priya+Patel&background=4f46e5&color=fff" alt="Priya Patel">
+                        </div>
+                        <div class="testimonial-card-content">
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                            <h4>Priya Patel</h4>
+                            <span class="testimonial-role">Graphic Designer</span>
+                            <p class="testimonial-text">Setting daily drink water reminders directly on discord is super convenient. I don't need to download any separate apps.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar-wrapper">
+                            <img src="https://ui-avatars.com/api/?name=Rahul+Verma&background=4f46e5&color=fff" alt="Rahul Verma">
+                        </div>
+                        <div class="testimonial-card-content">
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                            <h4>Rahul Verma</h4>
+                            <span class="testimonial-role">Working Professional</span>
+                            <p class="testimonial-text">The voice note feature is awesome. I just say 'kal subah 10 baje team sync hai' and I get the alert right on time.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar-wrapper">
+                            <img src="https://ui-avatars.com/api/?name=Ananya+Iyer&background=4f46e5&color=fff" alt="Ananya Iyer">
+                        </div>
+                        <div class="testimonial-card-content">
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                            <h4>Ananya Iyer</h4>
+                            <span class="testimonial-role">Freelancer</span>
+                            <p class="testimonial-text">I keep forgetting client follow-ups. KAIDO handles my daily task reminders without any complicated setup or fuss.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar-wrapper">
+                            <img src="https://ui-avatars.com/api/?name=Vikram+Singh&background=4f46e5&color=fff" alt="Vikram Singh">
+                        </div>
+                        <div class="testimonial-card-content">
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                            <h4>Vikram Singh</h4>
+                            <span class="testimonial-role">Fitness Enthusiast</span>
+                            <p class="testimonial-text">Super simple and fast. I use it for my workout schedule and weekly medicine reminders. Works like a charm.</p>
+                        </div>
+                    </div>
+                    <!-- Duplicate track for seamless infinite scroll marquee -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar-wrapper">
+                            <img src="https://ui-avatars.com/api/?name=Amit+Sharma&background=4f46e5&color=fff" alt="Amit Sharma">
+                        </div>
+                        <div class="testimonial-card-content">
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                            <h4>Amit Sharma</h4>
+                            <span class="testimonial-role">College Student</span>
+                            <p class="testimonial-text">I just send a quick voice message on discord like 'remind me to submit assignment at 5pm' and it works. Super helpful during exams!</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar-wrapper">
+                            <img src="https://ui-avatars.com/api/?name=Priya+Patel&background=4f46e5&color=fff" alt="Priya Patel">
+                        </div>
+                        <div class="testimonial-card-content">
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                            <h4>Priya Patel</h4>
+                            <span class="testimonial-role">Graphic Designer</span>
+                            <p class="testimonial-text">Setting daily drink water reminders directly on discord is super convenient. I don't need to download any separate apps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="security-badge" style="margin: 20px auto 0; display: flex;">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                </svg>
+                Secure. Private. Always yours.
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Have questions or feedback? Send us a message and we'll get back to you!</p>
+            <div class="contact-card">
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="938fc355-b52f-4a72-a232-a0ad66837e14">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" name="email" class="form-input" placeholder="yourname@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" class="form-input form-textarea" rows="4" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary contact-submit-btn">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-wrapper">
+        <section class="future-plans">
+            <div class="future-plans-content">
+                <div class="future-icon"><img src="assets/Kaido Logo.png" alt="KAIDO Logo"
+                        style="height: 100px; width: auto; margin-bottom: 20px;"></div>
+                <h2 class="future-title">Experience the Evolution</h2>
+                <p class="future-description">
+                    KAIDO is growing beyond simple notifications to become your proactive life partner.
+                    We are building a seamless ecosystem designed to anticipate your needs, automate your logistics, and
+                    protect your most valuable asset: <strong>your focus.</strong>
+                    <br><br>
+                    <strong>Built for India. Growing with India.</strong>
+                </p>
+                <div class="future-tags">
+                    <span class="future-tag"><i class="fas fa-taxi"></i> Cab Booking</span>
+                    <span class="future-tag"><i class="fas fa-calendar-check"></i> Smart Scheduling</span>
+                    <span class="future-tag"><i class="fas fa-clipboard-list"></i> Task Management</span>
+                    <span class="future-tag"><i class="fas fa-cake-candles"></i> Personal Milestones</span>
+                    <span class="future-tag"><i class="fas fa-heart-pulse"></i> Health Tracking</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <div class="footer-logo">
+                        <img src="assets/Kaido Logo.png" alt="KAIDO">
+                        <span>KAIDO</span>
+                    </div>
+                    <p class="footer-tagline">At KAIDO, we offer a seamless range of AI focus solutions that empower
+                        growth and enhance efficiency to meet your unique memory needs.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/prawin-jayakhar/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/prxjay" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://prxjay.github.io/Portfolio/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter-col">
+                    <h4>Join Our Newsletter</h4>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); const form = this; fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ access_key: '938fc355-b52f-4a72-a232-a0ad66837e14', subject: 'New Newsletter Subscription', email: form.querySelector('#newsletter-email').value }) }); Swal.fire({title: 'Subscribed!', text: 'Thank you for subscribing to KAIDO newsletter.', icon: 'success', confirmButtonColor: '#6366F1'}); form.reset();">
+                        <input type="email" name="email" placeholder="Enter your email" id="newsletter-email" required>
+                        <button type="submit" id="newsletter-btn">Subscribe</button>
+                    </form>
+                    <p class="newsletter-note">We will send you weekly updates for your better focus management.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p class="copyright">&copy; 2026 KAIDO. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <p class="developed-by">Designed & Created by <a href="https://www.linkedin.com/in/prawin-jayakhar/" target="_blank" style="color: inherit; text-decoration: underline;">Prawin</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <a href="#top" class="scroll-to-top" id="scrollToTopBtn">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+</body>
+
+</html>
