@@ -1,6 +1,8 @@
 # KAIDO — Intelligent Reminder Assistant
 
-KAIDO is an AI-driven reminder assistant that works seamlessly on Discord and Telegram. It turns natural language (text or voice notes in any language) into structured reminders, notifying users exactly when they need them.
+**Live Demo**: [https://kaido-ai-9g3e.onrender.com/](https://kaido-ai-9g3e.onrender.com/)
+
+KAIDO is an AI-driven reminder assistant that works seamlessly across **Discord** and **Telegram**. It turns natural language (text or voice notes in any language) into structured reminders, notifying users exactly when they need them.
 
 ---
 
@@ -67,7 +69,7 @@ npm run dev
 
 ## Admin Dashboard
 
-Access the admin panel at `http://localhost:3005/admin.html` to view users, manage reminders, and monitor system logs.
+Access the live admin panel at `https://kaido-ai-9g3e.onrender.com/admin/index.html` (or `http://localhost:3005/admin` locally) to view users, manage reminders, and monitor system logs.
 
 ---
 
