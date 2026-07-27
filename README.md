@@ -1,4 +1,4 @@
-# KAIDO — Intelligent Reminder Assistant
+# KAIDO | AI-Powered Reminder Assistant
 
 **Live Demo**: [https://kaido-ai-9g3e.onrender.com/](https://kaido-ai-9g3e.onrender.com/)
 
