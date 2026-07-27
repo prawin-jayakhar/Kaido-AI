@@ -182,6 +182,10 @@ if (isProduction && process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_BOT_T
 // Launch Discord Bot
 launchDiscordBot();
 
-app.listen(port, '0.0.0.0', () => {
-    console.log(`Server is running on port ${port}`);
-});
+if (process.env.NODE_ENV !== 'vercel') {
+    app.listen(port, '0.0.0.0', () => {
+        console.log(`Server is running on port ${port}`);
+    });
+}
+
+export default app;
