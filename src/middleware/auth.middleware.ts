@@ -22,8 +22,11 @@ export const requireAdminAuth = (req: Request, res: Response, next: NextFunction
     const decoded = Buffer.from(credentials, 'base64').toString('utf-8');
     const [username, password] = decoded.split(':');
 
-    // Hardcoded credentials
-    if (username === 'admin' && password === 'admin') {
+    // Credentials check against environment variables or fallback
+    const expectedUsername = process.env.ADMIN_USERNAME || 'admin';
+    const expectedPassword = process.env.ADMIN_SECRET || 'admin';
+
+    if (username === expectedUsername && password === expectedPassword) {
         next(); // Authentication successful
     } else {
         return res.status(403).json({ error: 'Forbidden - Invalid credentials' });
